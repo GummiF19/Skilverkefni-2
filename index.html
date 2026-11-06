@@ -1,1 +1,47 @@
-hallo
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Trépúsl</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Allur leikurinn er ein SVG mynd sem passar á hvaða skjá sem er -->
+  <svg id="game" viewBox="0 0 1000 1000">
+
+    <!-- Formin sem morph notar -->
+    <g opacity="0" pointer-events="none">
+      <path id="starShape" d="M 0 -130 L 32 -44 L 124 -40 L 52 17 L 76 105 L 0 55 L -76 105 L -52 17 L -124 -40 L -32 -44 Z"/>
+      <path id="heartShape" d="M 0 115 C -170 10 -120 -140 0 -55 C 120 -140 170 10 0 115 Z"/>
+    </g>
+
+    <!-- Path sem litla stjarnan flýgur eftir -->
+    <path id="flight" fill="none" d="M -100 700 C 200 300 400 900 600 500 S 900 100 1100 150"/>
+
+    <!-- Brettið -->
+    <rect id="board" x="250" y="60" width="500" height="500" rx="40" fill="#deb887"/>
+
+    <!-- Gatið í brettinu -->
+    <path id="hole" transform="translate(500 310)" fill="#8b5a2b"
+          d="M 0 -130 L 32 -44 L 124 -40 L 52 17 L 76 105 L 0 55 L -76 105 L -52 17 L -124 -40 L -32 -44 Z"/>
+
+    <!-- Hvít útlína sem teiknast upp -->
+    <path id="outline" transform="translate(500 310)" fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="round"
+          d="M 0 -130 L 32 -44 L 124 -40 L 52 17 L 76 105 L 0 55 L -76 105 L -52 17 L -124 -40 L -32 -44 Z"/>
+
+    <!-- stjarnan sem á að fara í gatið -->
+    <path id="piece" transform="translate(500 800)" fill="#e53935"
+          d="M 0 -130 L 32 -44 L 124 -40 L 52 17 L 76 105 L 0 55 L -76 105 L -52 17 L -124 -40 L -32 -44 Z"/>
+
+    <!-- Litla gula stjarnan sem kemur þegar stjarnan lendir í gatinu-->
+    <g id="flyer" opacity="0" pointer-events="none">
+      <path fill="#ffd54f" stroke="#ffb300" stroke-width="4" transform="scale(0.35)"
+            d="M 0 -130 L 32 -44 L 124 -40 L 52 17 L 76 105 L 0 55 L -76 105 L -52 17 L -124 -40 L -32 -44 Z"/>
+    </g>
+
+  </svg>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
