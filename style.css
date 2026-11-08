@@ -1,0 +1,23 @@
+/* Síðan*/
+html, body {
+  touch-action: none;     /* engin síða má zooma eða skruna með fingrum */
+}
+
+body {
+  margin: 0;              /* enginn hvítur kantur */
+  background: #bde4f4;    /* litur á bakgrunn */
+  overflow: hidden;
+}
+
+/* SVG myndin fyllir allan skjáinn */
+#game {
+  width: 100vw;
+  height: 100vh;
+  touch-action: none; /* zoomar ekki þegar skjárinn er snertur */
+}
+
+/* Brettið stækkar út frá eigin miðju þegar það hoppar */
+#board {
+  transform-box: fill-box;
+  transform-origin: center;
+} 
