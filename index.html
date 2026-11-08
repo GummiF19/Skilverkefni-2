@@ -2,14 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Trépúsl</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Allur leikurinn er ein SVG mynd sem passar á hvaða skjá sem er -->
   <svg id="game" viewBox="0 0 1000 1000">
-
     <!-- Formin sem morph notar -->
     <g opacity="0" pointer-events="none">
       <path id="starShape" d="M 0 -130 L 32 -44 L 124 -40 L 52 17 L 76 105 L 0 55 L -76 105 L -52 17 L -124 -40 L -32 -44 Z"/>
@@ -33,6 +32,9 @@
     <!-- stjarnan sem á að fara í gatið -->
     <path id="piece" transform="translate(500 800)" fill="#e53935"
           d="M 0 -130 L 32 -44 L 124 -40 L 52 17 L 76 105 L 0 55 L -76 105 L -52 17 L -124 -40 L -32 -44 Z"/>
+
+    <!-- Hringur sem stækkar -->
+    <circle id="ripple" r="20" fill="none" stroke="#fff" stroke-width="8" opacity="0" pointer-events="none"/>
 
     <!-- Litla gula stjarnan sem kemur þegar stjarnan lendir í gatinu-->
     <g id="flyer" opacity="0" pointer-events="none">
